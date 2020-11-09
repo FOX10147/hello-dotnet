@@ -4,7 +4,10 @@ pipeline {
         stage('build') {
             agent any
             steps {
-                 sh "dotnet build --configuration Release"
+                 withDotNet{ 
+                    sh "echo build dotnet"
+                    sh "dotnet build"
+                 }
             }
         }
         stage('sonarqube') {

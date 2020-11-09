@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             agent any
             steps {
-                 withDotNet{ 
+                 withDotNet('dotnetsdk') { 
                     sh "echo build dotnet"
                     sh "dotnet build"
                  }

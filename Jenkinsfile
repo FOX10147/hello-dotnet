@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             agent any
             steps {
-                sh 'echo build stage'
-                sh "docker version"
+                sh "echo build stage"
+                sh "dotnet build"
             }
         }
         stage('sonarqube') {

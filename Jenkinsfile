@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             agent any
             steps {
-                 withSonarQubeEnv('dotnetsdk') {
+                 withdotnetsdk('dotnetsdk') {
                     sh 'echo build stage'
                     sh 'dotnet build'
                  }
